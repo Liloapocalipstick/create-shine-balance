@@ -1,0 +1,8 @@
+services:
+  - type: static
+    name: luminous-static
+    buildCommand: npm ci && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: NODE_ENV
+        value: production
