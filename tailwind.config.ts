@@ -18,12 +18,26 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'poppins': ['Poppins', 'sans-serif'],
+				'raleway': ['Raleway', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				
+				// Luminous Brand Colors
+				luminous: {
+					yellow: 'hsl(var(--luminous-yellow))',
+					orange: 'hsl(var(--luminous-orange))',
+					blue: 'hsl(var(--luminous-blue))',
+					green: 'hsl(var(--luminous-green))',
+					neutral: 'hsl(var(--luminous-neutral))',
+				},
+				
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
