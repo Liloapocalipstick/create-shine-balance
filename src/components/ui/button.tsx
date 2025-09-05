@@ -18,6 +18,13 @@ const buttonVariants = cva(
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        
+        // Luminous brand variants
+        hero: "bg-gradient-primary text-white font-semibold hover:shadow-glow transition-all duration-300 hover:scale-105",
+        creative: "bg-gradient-creative text-white font-medium hover:shadow-creative transition-smooth",
+        wellness: "bg-gradient-wellness text-white font-medium hover:shadow-wellness transition-smooth",
+        glow: "bg-luminous-yellow text-gray-900 font-semibold hover:animate-glow transition-bounce",
+        calm: "bg-luminous-blue text-white hover:bg-luminous-blue/90 transition-smooth",
       },
       size: {
         default: "h-10 px-4 py-2",
