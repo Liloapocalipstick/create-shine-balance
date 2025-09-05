@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: luminous-app
+    env: node
+    buildCommand: npm ci && npm run build
+    startCommand: npm run preview
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 18
+    staticPublishPath: ./dist
