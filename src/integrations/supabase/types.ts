@@ -14,6 +14,109 @@ export type Database = {
   }
   public: {
     Tables: {
+      habit_logs: {
+        Row: {
+          completed_at: string
+          count: number | null
+          created_at: string
+          habit_id: string
+          id: string
+          notes: string | null
+        }
+        Insert: {
+          completed_at?: string
+          count?: number | null
+          created_at?: string
+          habit_id: string
+          id?: string
+          notes?: string | null
+        }
+        Update: {
+          completed_at?: string
+          count?: number | null
+          created_at?: string
+          habit_id?: string
+          id?: string
+          notes?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "habit_logs_habit_id_fkey"
+            columns: ["habit_id"]
+            isOneToOne: false
+            referencedRelation: "wellness_habits"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      meditation_sessions: {
+        Row: {
+          completed_at: string
+          duration_seconds: number
+          id: string
+          meditation_id: string | null
+          user_id: string
+        }
+        Insert: {
+          completed_at?: string
+          duration_seconds: number
+          id?: string
+          meditation_id?: string | null
+          user_id: string
+        }
+        Update: {
+          completed_at?: string
+          duration_seconds?: number
+          id?: string
+          meditation_id?: string | null
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "meditation_sessions_meditation_id_fkey"
+            columns: ["meditation_id"]
+            isOneToOne: false
+            referencedRelation: "meditations"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      meditations: {
+        Row: {
+          audio_url: string | null
+          category: string
+          created_at: string
+          description: string | null
+          duration_minutes: number
+          id: string
+          image_url: string | null
+          is_premium: boolean | null
+          title: string
+        }
+        Insert: {
+          audio_url?: string | null
+          category: string
+          created_at?: string
+          description?: string | null
+          duration_minutes: number
+          id?: string
+          image_url?: string | null
+          is_premium?: boolean | null
+          title: string
+        }
+        Update: {
+          audio_url?: string | null
+          category?: string
+          created_at?: string
+          description?: string | null
+          duration_minutes?: number
+          id?: string
+          image_url?: string | null
+          is_premium?: boolean | null
+          title?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           avatar_url: string | null
@@ -112,6 +215,48 @@ export type Database = {
           created_at?: string
           description?: string | null
           id?: string
+          title?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      wellness_habits: {
+        Row: {
+          color: string | null
+          created_at: string
+          description: string | null
+          frequency: string
+          icon: string | null
+          id: string
+          reminder_time: string | null
+          target_count: number | null
+          title: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          color?: string | null
+          created_at?: string
+          description?: string | null
+          frequency?: string
+          icon?: string | null
+          id?: string
+          reminder_time?: string | null
+          target_count?: number | null
+          title: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          color?: string | null
+          created_at?: string
+          description?: string | null
+          frequency?: string
+          icon?: string | null
+          id?: string
+          reminder_time?: string | null
+          target_count?: number | null
           title?: string
           updated_at?: string
           user_id?: string
