@@ -17,8 +17,8 @@ export default defineConfig(({ mode }) => ({
       registerType: "autoUpdate",
       includeAssets: ["favicon.ico", "robots.txt"],
       manifest: {
-        name: "Luminous - Creatividad y Bienestar",
-        short_name: "Luminous",
+        name: "Luminous Mind - Creatividad y Bienestar",
+        short_name: "Luminous Mind",
         description: "Plataforma digital para inspirar y organizar proyectos creativos, rituales de bienestar y momentos de reflexión diaria",
         theme_color: "#FFEB3B",
         background_color: "#0F0F0F",
