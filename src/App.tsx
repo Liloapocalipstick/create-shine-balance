@@ -12,6 +12,7 @@ import ProjectDetail from "./pages/ProjectDetail";
 import Wellness from "./pages/Wellness";
 import Stats from "./pages/Stats";
 import Install from "./pages/Install";
+import Inspiration from "./pages/Inspiration";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,6 +33,7 @@ const App = () => (
             <Route path="/wellness" element={<Wellness />} />
             <Route path="/stats" element={<Stats />} />
             <Route path="/install" element={<Install />} />
+            <Route path="/inspiration" element={<Inspiration />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
