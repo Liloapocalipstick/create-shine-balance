@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Lightbulb, Target, Heart, Sparkles, LogOut, User, BarChart3 } from 'lucide-react';
+import { Lightbulb, Target, Heart, Sparkles, LogOut, User, BarChart3, Download } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
 
 const Dashboard = () => {
@@ -62,6 +62,14 @@ const Dashboard = () => {
       color: "bg-gradient-to-br from-purple-500 to-indigo-500",
       available: true,
       link: "/stats"
+    },
+    {
+      icon: <Download className="h-6 w-6" />,
+      title: "Instalar App",
+      description: "Añade Luminous a tu pantalla",
+      color: "bg-gradient-to-br from-gray-700 to-gray-900",
+      available: true,
+      link: "/install"
     }
   ];
 
@@ -106,7 +114,7 @@ const Dashboard = () => {
           </div>
 
           {/* Quick Actions */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
             {quickActions.map((action, index) => (
               <Link 
                 key={index} 
