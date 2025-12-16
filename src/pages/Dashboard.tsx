@@ -44,8 +44,8 @@ const Dashboard = () => {
       title: "Rituales de Bienestar",
       description: "Tu rutina diaria de autocuidado",
       color: "bg-gradient-wellness",
-      available: false,
-      link: "#"
+      available: true,
+      link: "/wellness"
     },
     {
       icon: <Sparkles className="h-6 w-6" />,
