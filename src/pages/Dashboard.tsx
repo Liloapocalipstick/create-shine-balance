@@ -98,10 +98,13 @@ const Dashboard = () => {
           </div>
           
           <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-2 text-gray-600">
+            <Link 
+              to="/profile" 
+              className="flex items-center space-x-2 text-gray-600 hover:text-gray-900 transition-colors"
+            >
               <User className="h-5 w-5" />
               <span className="font-medium">{user.email}</span>
-            </div>
+            </Link>
             <Button variant="ghost" onClick={handleSignOut}>
               <LogOut className="h-5 w-5 mr-2" />
               Cerrar Sesión

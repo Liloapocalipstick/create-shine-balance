@@ -14,6 +14,7 @@ import Stats from "./pages/Stats";
 import Install from "./pages/Install";
 import Inspiration from "./pages/Inspiration";
 import Admin from "./pages/Admin";
+import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -36,6 +37,7 @@ const App = () => (
             <Route path="/install" element={<Install />} />
             <Route path="/inspiration" element={<Inspiration />} />
             <Route path="/admin" element={<Admin />} />
+            <Route path="/profile" element={<Profile />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
