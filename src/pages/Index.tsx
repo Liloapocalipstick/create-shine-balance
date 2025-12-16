@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Lightbulb, Heart, Users, Target, Sparkles, Sun } from "lucide-react";
+import { Heart, Users, Target, Sparkles, Sun } from "lucide-react";
 import heroImage from "@/assets/hero-luminous.jpg";
-
+import logoImage from "@/assets/logo.png";
 const Index = () => {
   const features = [
     {
@@ -45,11 +45,9 @@ const Index = () => {
       <nav className="px-6 py-4 bg-background/90 backdrop-blur-sm fixed w-full top-0 z-50 border-b border-border">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <div className="p-2 bg-gradient-primary rounded-lg">
-              <Lightbulb className="h-6 w-6 text-white" />
-            </div>
+            <img src={logoImage} alt="Luminous Mind" className="h-10 w-10 object-contain" />
             <span className="text-xl font-bold font-poppins bg-gradient-primary bg-clip-text text-transparent">
-              Luminous
+              Luminous Mind
             </span>
           </div>
           
@@ -218,11 +216,9 @@ const Index = () => {
           <div className="grid md:grid-cols-4 gap-8">
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
-                <div className="p-2 bg-gradient-primary rounded-lg">
-                  <Lightbulb className="h-6 w-6 text-white" />
-                </div>
+                <img src={logoImage} alt="Luminous Mind" className="h-10 w-10 object-contain" />
                 <span className="text-xl font-bold font-poppins">
-                  Luminous
+                  Luminous Mind
                 </span>
               </div>
               <p className="text-gray-400 font-raleway">
