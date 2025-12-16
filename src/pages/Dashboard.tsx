@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Lightbulb, Target, Heart, Sparkles, LogOut, User } from 'lucide-react';
@@ -36,21 +36,24 @@ const Dashboard = () => {
       title: "Proyectos Creativos",
       description: "Organiza tus ideas y proyectos",
       color: "bg-gradient-creative",
-      available: false
+      available: true,
+      link: "/projects"
     },
     {
       icon: <Heart className="h-6 w-6" />,
       title: "Rituales de Bienestar",
       description: "Tu rutina diaria de autocuidado",
       color: "bg-gradient-wellness",
-      available: false
+      available: false,
+      link: "#"
     },
     {
       icon: <Sparkles className="h-6 w-6" />,
       title: "Inspiración Diaria",
       description: "Contenido motivacional para ti",
       color: "bg-gradient-calm",
-      available: false
+      available: false,
+      link: "#"
     }
   ];
 
@@ -97,31 +100,36 @@ const Dashboard = () => {
           {/* Quick Actions */}
           <div className="grid md:grid-cols-3 gap-6">
             {quickActions.map((action, index) => (
-              <Card 
-                key={index}
-                className={`border-0 shadow-lg hover:shadow-xl transition-all duration-300 ${
-                  action.available ? 'cursor-pointer hover:-translate-y-1' : 'opacity-75'
-                }`}
+              <Link 
+                key={index} 
+                to={action.link}
+                className={!action.available ? 'pointer-events-none' : ''}
               >
-                <CardHeader className="pb-2">
-                  <div className={`w-12 h-12 ${action.color} rounded-xl flex items-center justify-center text-white mb-3`}>
-                    {action.icon}
-                  </div>
-                  <CardTitle className="text-lg font-poppins flex items-center justify-between">
-                    {action.title}
-                    {!action.available && (
-                      <span className="text-xs bg-gray-100 text-gray-500 px-2 py-1 rounded-full font-normal">
-                        Próximamente
-                      </span>
-                    )}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 font-raleway text-sm">
-                    {action.description}
-                  </p>
-                </CardContent>
-              </Card>
+                <Card 
+                  className={`border-0 shadow-lg hover:shadow-xl transition-all duration-300 h-full ${
+                    action.available ? 'cursor-pointer hover:-translate-y-1' : 'opacity-75'
+                  }`}
+                >
+                  <CardHeader className="pb-2">
+                    <div className={`w-12 h-12 ${action.color} rounded-xl flex items-center justify-center text-white mb-3`}>
+                      {action.icon}
+                    </div>
+                    <CardTitle className="text-lg font-poppins flex items-center justify-between">
+                      {action.title}
+                      {!action.available && (
+                        <span className="text-xs bg-gray-100 text-gray-500 px-2 py-1 rounded-full font-normal">
+                          Próximamente
+                        </span>
+                      )}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-600 font-raleway text-sm">
+                      {action.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
 
