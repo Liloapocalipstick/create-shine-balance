@@ -168,7 +168,7 @@ const Inspiration = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-orange-50 via-yellow-50 to-blue-50">
+      <div className="min-h-screen flex items-center justify-center bg-page">
         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-accent"></div>
       </div>
     );
@@ -177,9 +177,9 @@ const Inspiration = () => {
   if (!user) return null;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-yellow-50 to-blue-50">
+    <div className="min-h-screen bg-page">
       {/* Navigation */}
-      <nav className="px-6 py-4 bg-white/90 backdrop-blur-sm border-b border-border">
+      <nav className="px-6 py-4 bg-nav">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-4">
             <Button variant="ghost" onClick={() => navigate('/dashboard')}>

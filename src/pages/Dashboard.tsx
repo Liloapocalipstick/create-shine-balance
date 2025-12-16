@@ -24,8 +24,8 @@ const Dashboard = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-orange-50 via-yellow-50 to-blue-50">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-orange-500"></div>
+      <div className="min-h-screen flex items-center justify-center bg-page">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-accent"></div>
       </div>
     );
   }
@@ -84,9 +84,9 @@ const Dashboard = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-yellow-50 to-blue-50">
+    <div className="min-h-screen bg-page">
       {/* Navigation */}
-      <nav className="px-6 py-4 bg-white/90 backdrop-blur-sm border-b border-gray-100">
+      <nav className="px-6 py-4 bg-nav">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <div className="p-2 bg-gradient-primary rounded-lg">
@@ -118,10 +118,10 @@ const Dashboard = () => {
         <div className="space-y-8">
           {/* Welcome */}
           <div className="space-y-2">
-            <h1 className="text-4xl font-bold font-poppins text-gray-900">
+            <h1 className="text-4xl font-bold font-poppins text-foreground">
               ¡Hola! 👋
             </h1>
-            <p className="text-xl text-gray-600 font-raleway">
+            <p className="text-xl text-muted-foreground font-raleway">
               Bienvenido a tu espacio de creatividad y bienestar
             </p>
           </div>
@@ -153,7 +153,7 @@ const Dashboard = () => {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-gray-600 font-raleway text-sm">
+                    <p className="text-muted-foreground font-raleway text-sm">
                       {action.description}
                     </p>
                   </CardContent>
@@ -169,10 +169,10 @@ const Dashboard = () => {
                 <div className="w-20 h-20 bg-gradient-primary rounded-full mx-auto flex items-center justify-center">
                   <Sparkles className="h-10 w-10 text-white" />
                 </div>
-                <h3 className="text-2xl font-bold font-poppins text-gray-900">
+                <h3 className="text-2xl font-bold font-poppins text-foreground">
                   Tu viaje comienza aquí
                 </h3>
-                <p className="text-gray-600 font-raleway max-w-md mx-auto">
+                <p className="text-muted-foreground font-raleway max-w-md mx-auto">
                   Pronto podrás crear proyectos creativos, establecer rituales de bienestar 
                   y recibir inspiración diaria personalizada.
                 </p>

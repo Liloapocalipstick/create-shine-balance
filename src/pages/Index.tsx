@@ -40,9 +40,9 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       {/* Navigation */}
-      <nav className="px-6 py-4 bg-white/90 backdrop-blur-sm fixed w-full top-0 z-50 border-b border-gray-100">
+      <nav className="px-6 py-4 bg-background/90 backdrop-blur-sm fixed w-full top-0 z-50 border-b border-border">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <div className="p-2 bg-gradient-primary rounded-lg">
@@ -54,13 +54,13 @@ const Index = () => {
           </div>
           
           <div className="hidden md:flex items-center space-x-8">
-            <a href="#features" className="text-gray-600 hover:text-gray-900 font-medium transition-smooth">
+            <a href="#features" className="text-muted-foreground hover:text-foreground font-medium transition-smooth">
               Funciones
             </a>
-            <a href="#community" className="text-gray-600 hover:text-gray-900 font-medium transition-smooth">
+            <a href="#community" className="text-muted-foreground hover:text-foreground font-medium transition-smooth">
               Comunidad
             </a>
-            <a href="#about" className="text-gray-600 hover:text-gray-900 font-medium transition-smooth">
+            <a href="#about" className="text-muted-foreground hover:text-foreground font-medium transition-smooth">
               Nosotros
             </a>
           </div>
@@ -81,7 +81,7 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16 px-6 bg-gradient-to-br from-orange-50 via-yellow-50 to-blue-50 relative overflow-hidden">
+      <section className="pt-24 pb-16 px-6 bg-page relative overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8 animate-fade-in">
@@ -96,7 +96,7 @@ const Index = () => {
                     bienestar
                   </span>
                 </h1>
-                <p className="text-xl text-gray-600 font-raleway max-w-lg">
+                <p className="text-xl text-muted-foreground font-raleway max-w-lg">
                   Plataforma digital para inspirar y organizar proyectos creativos, 
                   rituales de bienestar y momentos de reflexión diaria.
                 </p>

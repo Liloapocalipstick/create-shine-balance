@@ -10,6 +10,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Separator } from '@/components/ui/separator';
 import { ArrowLeft, Camera, Save, User, Bell, Moon, Globe } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
+import { useTheme } from '@/hooks/useTheme';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 
@@ -27,6 +28,7 @@ interface UserProfile {
 const Profile = () => {
   const navigate = useNavigate();
   const { user, loading: authLoading } = useAuth();
+  const { theme, setTheme } = useTheme();
   const fileInputRef = useRef<HTMLInputElement>(null);
   
   const [profile, setProfile] = useState<UserProfile>({
@@ -184,7 +186,7 @@ const Profile = () => {
 
   if (authLoading || loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-orange-50 via-yellow-50 to-blue-50">
+      <div className="min-h-screen flex items-center justify-center bg-page">
         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-accent"></div>
       </div>
     );
@@ -193,9 +195,9 @@ const Profile = () => {
   if (!user) return null;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-yellow-50 to-blue-50">
+    <div className="min-h-screen bg-page">
       {/* Navigation */}
-      <nav className="px-6 py-4 bg-white/90 backdrop-blur-sm border-b border-border">
+      <nav className="px-6 py-4 bg-nav">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
           <Button variant="ghost" onClick={() => navigate('/dashboard')}>
             <ArrowLeft className="h-5 w-5 mr-2" />
@@ -333,8 +335,14 @@ const Profile = () => {
                   </div>
                 </div>
                 <Switch
-                  checked={profile.preferences.darkMode}
-                  onCheckedChange={(checked) => updatePreference('darkMode', checked)}
+                  checked={theme === 'dark'}
+                  onCheckedChange={(checked) => {
+                    setTheme(checked ? 'dark' : 'light');
+                    setProfile(prev => ({
+                      ...prev,
+                      preferences: { ...prev.preferences, darkMode: checked }
+                    }));
+                  }}
                 />
               </div>
 

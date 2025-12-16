@@ -131,6 +131,23 @@ All colors MUST be HSL.
 }
 
 @layer components {
+  /* Page backgrounds with dark mode support */
+  .bg-page {
+    @apply bg-gradient-to-br from-orange-50 via-yellow-50 to-blue-50;
+  }
+  
+  .dark .bg-page {
+    @apply bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900;
+  }
+  
+  .bg-nav {
+    @apply bg-white/90 backdrop-blur-sm border-b border-gray-100;
+  }
+  
+  .dark .bg-nav {
+    @apply bg-gray-900/90 backdrop-blur-sm border-b border-gray-800;
+  }
+  
   /* Luminous Utility Classes */
   .bg-gradient-primary {
     background: var(--gradient-primary);
