@@ -52,8 +52,8 @@ const Dashboard = () => {
       title: "Inspiración Diaria",
       description: "Contenido motivacional para ti",
       color: "bg-gradient-calm",
-      available: false,
-      link: "#"
+      available: true,
+      link: "/inspiration"
     },
     {
       icon: <BarChart3 className="h-6 w-6" />,
