@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Lightbulb, Target, Heart, Sparkles, LogOut, User } from 'lucide-react';
+import { Lightbulb, Target, Heart, Sparkles, LogOut, User, BarChart3 } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
 
 const Dashboard = () => {
@@ -54,6 +54,14 @@ const Dashboard = () => {
       color: "bg-gradient-calm",
       available: false,
       link: "#"
+    },
+    {
+      icon: <BarChart3 className="h-6 w-6" />,
+      title: "Mi Progreso",
+      description: "Estadísticas y rachas",
+      color: "bg-gradient-to-br from-purple-500 to-indigo-500",
+      available: true,
+      link: "/stats"
     }
   ];
 
@@ -98,7 +106,7 @@ const Dashboard = () => {
           </div>
 
           {/* Quick Actions */}
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {quickActions.map((action, index) => (
               <Link 
                 key={index} 
