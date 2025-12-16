@@ -11,6 +11,8 @@ import { HabitCard } from '@/components/wellness/HabitCard';
 import { CreateHabitDialog } from '@/components/wellness/CreateHabitDialog';
 import { MeditationCard } from '@/components/wellness/MeditationCard';
 import { MeditationPlayer } from '@/components/wellness/MeditationPlayer';
+import { NotificationPrompt } from '@/components/wellness/NotificationPrompt';
+import { HabitReminderScheduler } from '@/components/wellness/HabitReminderScheduler';
 
 const Wellness = () => {
   const navigate = useNavigate();
@@ -106,6 +108,12 @@ const Wellness = () => {
 
             {/* Habits Tab */}
             <TabsContent value="habits" className="space-y-6">
+              {/* Notification Prompt */}
+              <NotificationPrompt />
+              
+              {/* Habit Reminder Scheduler */}
+              <HabitReminderScheduler habits={habits} isHabitCompletedToday={isHabitCompletedToday} />
+
               <div className="flex justify-between items-center">
                 <h2 className="text-xl font-semibold font-poppins">Hábitos Diarios</h2>
                 <CreateHabitDialog onCreateHabit={createHabit} />
