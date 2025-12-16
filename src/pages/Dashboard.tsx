@@ -2,12 +2,14 @@ import { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Lightbulb, Target, Heart, Sparkles, LogOut, User, BarChart3, Download } from 'lucide-react';
+import { Lightbulb, Target, Heart, Sparkles, LogOut, User, BarChart3, Download, Shield } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
+import { useUserRole } from '@/hooks/useUserRole';
 
 const Dashboard = () => {
   const navigate = useNavigate();
   const { user, loading, signOut } = useAuth();
+  const { isAdmin } = useUserRole();
 
   useEffect(() => {
     if (!loading && !user) {
@@ -70,7 +72,15 @@ const Dashboard = () => {
       color: "bg-gradient-to-br from-gray-700 to-gray-900",
       available: true,
       link: "/install"
-    }
+    },
+    ...(isAdmin ? [{
+      icon: <Shield className="h-6 w-6" />,
+      title: "Administración",
+      description: "Gestión de usuarios y roles",
+      color: "bg-gradient-to-br from-red-500 to-orange-500",
+      available: true,
+      link: "/admin"
+    }] : [])
   ];
 
   return (
