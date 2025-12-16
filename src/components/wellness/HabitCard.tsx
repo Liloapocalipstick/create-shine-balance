@@ -1,7 +1,7 @@
 import { WellnessHabit } from '@/types/wellness';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Check, Trash2 } from 'lucide-react';
+import { Check, Trash2, Bell } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface HabitCardProps {
@@ -39,9 +39,17 @@ export const HabitCard = ({ habit, isCompleted, onToggle, onDelete }: HabitCardP
             )}>
               {habit.title}
             </h3>
-            {habit.description && (
-              <p className="text-sm text-gray-500 truncate">{habit.description}</p>
-            )}
+            <div className="flex items-center gap-2 mt-0.5">
+              {habit.description && (
+                <p className="text-sm text-gray-500 truncate">{habit.description}</p>
+              )}
+              {habit.reminder_time && (
+                <span className="flex items-center gap-1 text-xs text-blue-500">
+                  <Bell className="h-3 w-3" />
+                  {habit.reminder_time}
+                </span>
+              )}
+            </div>
           </div>
 
           <Button
