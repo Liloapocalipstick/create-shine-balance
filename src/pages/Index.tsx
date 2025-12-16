@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Lightbulb, Heart, Users, Target, Sparkles, Sun } from "lucide-react";
@@ -65,12 +66,16 @@ const Index = () => {
           </div>
           
           <div className="flex items-center space-x-4">
-            <Button variant="ghost" className="hidden md:inline-flex">
-              Iniciar Sesión
-            </Button>
-            <Button variant="hero" className="shadow-lg">
-              Comenzar Gratis
-            </Button>
+            <Link to="/auth">
+              <Button variant="ghost" className="hidden md:inline-flex">
+                Iniciar Sesión
+              </Button>
+            </Link>
+            <Link to="/auth">
+              <Button variant="hero" className="shadow-lg">
+                Comenzar Gratis
+              </Button>
+            </Link>
           </div>
         </div>
       </nav>
@@ -98,10 +103,12 @@ const Index = () => {
               </div>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="hero" size="lg" className="text-lg px-8 py-4">
-                  <Sun className="mr-2 h-5 w-5" />
-                  Comienza Tu Viaje
-                </Button>
+                <Link to="/auth">
+                  <Button variant="hero" size="lg" className="text-lg px-8 py-4">
+                    <Sun className="mr-2 h-5 w-5" />
+                    Comienza Tu Viaje
+                  </Button>
+                </Link>
                 <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-2">
                   Ver Demo
                 </Button>
@@ -186,10 +193,12 @@ const Index = () => {
               Únete a miles de personas que ya están transformando su vida creativa y bienestar con Luminous
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="secondary" size="lg" className="text-lg px-8 py-4 bg-white text-gray-900 hover:bg-gray-100">
-                <Sparkles className="mr-2 h-5 w-5" />
-                Comenzar Ahora
-              </Button>
+              <Link to="/auth">
+                <Button variant="secondary" size="lg" className="text-lg px-8 py-4 bg-white text-gray-900 hover:bg-gray-100">
+                  <Sparkles className="mr-2 h-5 w-5" />
+                  Comenzar Ahora
+                </Button>
+              </Link>
               <Button variant="outline" size="lg" className="text-lg px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-gray-900">
                 Explorar Funciones
               </Button>
