@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Lightbulb, ArrowLeft } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
 import { KanbanBoard } from '@/components/projects/KanbanBoard';
 import { supabase } from '@/integrations/supabase/client';
 import { Project } from '@/types/projects';
+import logoImage from '@/assets/logo.png';
 
 const ProjectDetail = () => {
   const navigate = useNavigate();
@@ -64,11 +65,9 @@ const ProjectDetail = () => {
               </Button>
             </Link>
             <div className="flex items-center space-x-2">
-              <div className="p-2 bg-gradient-primary rounded-lg">
-                <Lightbulb className="h-6 w-6 text-white" />
-              </div>
+              <img src={logoImage} alt="Luminous Mind" className="h-10 w-10 object-contain" />
               <span className="text-xl font-bold font-poppins bg-gradient-primary bg-clip-text text-transparent">
-                Luminous
+                Luminous Mind
               </span>
             </div>
           </div>

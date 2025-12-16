@@ -5,10 +5,11 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Lightbulb, Mail, Lock, User, ArrowLeft } from 'lucide-react';
+import { Mail, Lock, User, ArrowLeft } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
 import { useToast } from '@/hooks/use-toast';
 import { z } from 'zod';
+import logoImage from '@/assets/logo.png';
 
 const loginSchema = z.object({
   email: z.string().email('Email inválido'),
@@ -145,11 +146,9 @@ const Auth = () => {
         <Card className="border-0 shadow-2xl">
           <CardHeader className="text-center pb-2">
             <div className="flex items-center justify-center space-x-2 mb-4">
-              <div className="p-2 bg-gradient-primary rounded-lg">
-                <Lightbulb className="h-6 w-6 text-white" />
-              </div>
+              <img src={logoImage} alt="Luminous Mind" className="h-12 w-12 object-contain" />
               <span className="text-2xl font-bold font-poppins bg-gradient-primary bg-clip-text text-transparent">
-                Luminous
+                Luminous Mind
               </span>
             </div>
             <CardTitle className="text-2xl font-poppins">Bienvenido</CardTitle>

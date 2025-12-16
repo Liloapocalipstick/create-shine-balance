@@ -2,10 +2,11 @@ import { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Lightbulb, ArrowLeft, TrendingUp, Clock, Flame, Target, Calendar } from 'lucide-react';
+import { ArrowLeft, TrendingUp, Clock, Flame, Target, Calendar } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
 import { useWellnessStats } from '@/hooks/useWellnessStats';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, LineChart, Line, AreaChart, Area } from 'recharts';
+import logoImage from '@/assets/logo.png';
 
 const Stats = () => {
   const navigate = useNavigate();
@@ -46,11 +47,9 @@ const Stats = () => {
               </Button>
             </Link>
             <div className="flex items-center space-x-2">
-              <div className="p-2 bg-gradient-primary rounded-lg">
-                <Lightbulb className="h-6 w-6 text-white" />
-              </div>
+              <img src={logoImage} alt="Luminous Mind" className="h-10 w-10 object-contain" />
               <span className="text-xl font-bold font-poppins bg-gradient-primary bg-clip-text text-transparent">
-                Luminous
+                Luminous Mind
               </span>
             </div>
           </div>
